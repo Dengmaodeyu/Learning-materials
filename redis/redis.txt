@@ -1,0 +1,72 @@
+redis数据库操作
+
+	redis-cli	连接数据库
+	
+string类型：
+	set		设置数据（键 值）
+		set name pcc
+	
+	get		查看数据
+		get name
+		
+	del		删除数据
+		del name
+	
+	setex	设置此数据多久失效（键 时间/秒 值）
+		setex name 100 h4
+		
+	ttl		查看数据还有多长时间失效
+		ttl name
+		
+	mset	设置多个值	（键 值 like 值 like 值 ...）
+		mset name pcc like lyh
+	
+	mget	获取多个值
+		mget name like
+		
+	append	追加值		注意：是在原本的数据后面追加  
+		append name lalala
+
+	keys 	查找
+		keys *	查找到所有的key
+		keys a* 查看以a开头的key
+		
+	exists	判断key是否存在
+		exists name
+	
+	type	判断类型
+		type age
+	
+	expire 设置已存在的key的存在时间，时间过后自动销毁
+		expire age 10	10秒后 自动销毁
+		
+
+hash：
+	hest person 设置数据（键，值）
+		hset person name itcast
+		
+	hget person 查看数据
+		hget person name
+		
+	hmset	设置多个值	（键 值 like 值 like 值 ...）
+		hmset person name pcc like lyh
+	
+	hmget	获取多个值
+		hmget person name like
+		
+	hgetall	person	获取所有的键值
+	
+	hkeys	person	获取所有的键
+	
+	hvals person	获取所有的值
+	
+	hdel person 	删除某一个值
+		hdel person name
+	
+	del person		删除所有的键值
+	
+list：
+	lpush a1 a b c  左边插入数据
+	rpush			右边插入数据
+	
+	
